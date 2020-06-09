@@ -4,6 +4,10 @@ import VueRouter from 'vue-router'
 import Dashboard from '@/components/Dashboard.vue'
 import Login from '@/components/pages/Login.vue'
 import Products from '@/components/pages/products'
+import Orders from '@/components/pages/orders'
+import Coupons from '@/components/pages/coupons'
+
+
 
 
 
@@ -44,8 +48,19 @@ Vue.use(VueRouter)
         name:'products',
         component:Products,
         meta: { requiresAuth: true },
+      },
+      {
+        path:'orders',
+        name:'orders',
+        component:Orders,
+        meta: { requiresAuth: true },
+      },
+      {
+        path:'coupons',
+        name:'coupons',
+        component:Coupons,
+        meta: { requiresAuth: true },
       }
-
     ],
   }
 ]

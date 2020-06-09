@@ -1,18 +1,32 @@
 import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import Loading from 'vue-loading-overlay'
+import 'vue-loading-overlay/dist/vue-loading.css'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faSpinner, faAlignLeft, faUserSecret } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import 'bootstrap'
 
 
 import router from './router'
 import App from './App.vue'
+import './bus'
+import currencyFilter from './filters/currency'
+import dateFilter from './filters/date'
+
+library.add(faUserSecret,faSpinner, faAlignLeft)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 
 Vue.config.productionTip = false
-
 Vue.use(VueAxios, axios)
 
-axios.defaults.withCredentals = true;
+Vue.component('Loading', Loading)
+Vue.filter('currency',currencyFilter)
+Vue.filter('date' , dateFilter)
+
+axios.defaults.withCredentials = true;
 
 new Vue({
   router,
