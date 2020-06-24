@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav aria-label="Page navigation example">
-      <ul class="pagination">
+      <ul class="pagination justify-content-center">
         <li class="page-item" :class="{'disabled':!pagination.has_pre}">
           <a
             class="page-link"

@@ -1,14 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import Home from '../views/Home.vue'
-import Dashboard from '@/components/Dashboard.vue'
-import Login from '@/components/pages/Login.vue'
-import Products from '@/components/pages/products'
-import Orders from '@/components/pages/orders'
-import Coupons from '@/components/pages/coupons'
-
-
-
+import CustomerOrders from '@/components/pages/customerOrders'
+import CustomerCheckout from '@/components/pages/customerCheckout'
 
 
 Vue.use(VueRouter)
@@ -19,50 +12,99 @@ Vue.use(VueRouter)
     path:'*',
     redirect:'/login'
   },
-  // {
-  //   path: '/',
-  //   name: 'Home',
-  //   component: Home,
-  //   meta: { requiresAuth: true },
-  // },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
-  },
   {
     path:'/login',
     name:'Login',
-    component:Login
+    component: () => import('@/components/pages/Login'),
   },
   {
     path: '/admin',
-    name: 'Home',
-    component: Dashboard,
+    name: 'Dashboard',
+    component: () => import('@/components/Dashboard'),
     children:[
       {
         path:'products',
         name:'products',
-        component:Products,
+        component: () => import('@/components/pages/products'),
         meta: { requiresAuth: true },
       },
       {
         path:'orders',
         name:'orders',
-        component:Orders,
+        component: () => import('@/components/pages/orders'),
         meta: { requiresAuth: true },
       },
       {
         path:'coupons',
         name:'coupons',
-        component:Coupons,
+        component: () => import('@/components/pages/coupons'),
         meta: { requiresAuth: true },
       }
     ],
-  }
+  },
+  {
+    path: '/catshop_home',
+    alias:'/',
+    name: 'catShop',
+    component: () => import('@/components/pages/catShop'),
+    children:[
+      {
+        path: '/catshop_home',
+        name: 'shopHome',
+        component: () => import('@/components/pages/catShopHome'),
+      },
+      {
+        path: '/about',
+        name: 'About',
+        component: () => import('@/components/pages/ourStory'),
+      },
+      {
+        path: '/shoppage',
+        name: 'ShopPage',
+        component: () => import('@/components/pages/shoppage'),
+      },
+      {
+        path:'/shopItem/:id',
+        name:'ShopItem',
+        component: () => import('@/components/pages/shopsItem'),
+      },
+      {
+        path: '/location',
+        name: 'Location',
+        component: () => import('@/components/pages/location'),
+      },
+      {
+        path:'/wishlist',
+        name:'WishList',
+        component: () => import('@/components/pages/wishList'),
+      },
+      {
+        path:'/cart',
+        name:'Cart',
+        component: () => import('@/components/pages/cart'),
+      },
+      {
+        path:'/checkout',
+        name:'Check',
+        component: () => import('@/components/pages/checkout'),
+      },
+      {
+        path:'/payment/:orderId',
+        name:'Payment',
+        component: () => import('@/components/pages/payment'),
+      },
+    ]
+  },
+  {
+    path:'/customer_orders',
+    name:'CustomerOrders',
+    component:CustomerOrders,
+  },
+  {
+    path:'/customer_checkout/:orderId',
+    name:'CustomerCheckout',
+    component:CustomerCheckout,
+  },
 ]
 
 const router = new VueRouter({

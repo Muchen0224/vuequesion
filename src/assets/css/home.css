@@ -1,0 +1,102 @@
+.body-wrap{
+  overflow: hidden;
+  width: 100%;
+}
+
+.site-wrap{
+  position: relative;
+  transition: all 0.5s;
+}
+
+.site-wrap.side-open{
+  transform: translateX(-270px);
+}
+
+
+
+/* content */
+
+#content .slider{
+  background-image: url("../img/slider.jpg");
+  width: 100%;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+#content .slider .row{
+  min-height: 600px;
+}
+
+#content .slider .row .text-wrap{
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+#content .slider .row .text-wrap .title{
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 4px;
+}
+
+#content .slider .row .text-wrap .subtitle{
+  font-size: 20px;
+  font-weight: 900;
+}
+
+#content .slider .row .text-wrap p{
+  letter-spacing: 4px;
+}
+
+#content .slider .row .text-wrap .buy-now{
+  margin-top: 100px;
+}
+
+hr.divider{
+  width: 60px;
+  height: 2px;
+  border: none;
+  background: purple;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+#content .new-sale .title{
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+#content .new-sale .carousel-caption{
+  position: static;
+  color: black;
+}
+
+#content .new-sale .carousel.pointer-event{
+  height: fit-content;
+}
+
+#content .new-sale .carousel-indicators{
+  position: static;
+}
+
+#content .new-sale .carousel-indicators li{
+  background-color: black;
+}
+
+#content .new-sale .carousel-control-prev-icon,#content .new-sale .carousel-control-next-icon{
+  position: absolute;
+    top: 30%;
+}
+
+#content .new-sale  .price{
+  font-size: 20px;
+  color: purple;
+  font-weight: 700;
+}
+
+@media(min-width:768px){
+  #content .new-sale .carousel-control-prev-icon, #content .new-sale .carousel-control-next-icon{
+    top: 40%;
+  }
+}

@@ -48,11 +48,10 @@
             </h6>
             <ul class="nav flex-column mb-2">
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file-text"></span>
-                  <i class="fas fa-shopping-cart"></i>
-                  模擬訂單
-                </a>
+                <router-link to="/customer_orders" class="nav-link">
+                <i class="fas fa-shopping-cart"></i>
+                模擬訂單
+                </router-link>
               </li>
             </ul>
           </div>

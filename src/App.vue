@@ -12,4 +12,20 @@ export default {
 
 <style lang="scss">
 @import "./assets/all.scss";
+  ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+  }
+  *{
+    box-sizing: border-box;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  a:hover{
+    text-decoration: none;
+  }
 </style>

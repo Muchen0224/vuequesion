@@ -1,0 +1,13 @@
+.body-wrap{
+  overflow: hidden;
+  width: 100%;
+}
+
+.site-wrap{
+  position: relative;
+  transition: all 0.5s;
+}
+
+.site-wrap.side-open{
+  transform: translateX(-270px);
+}
